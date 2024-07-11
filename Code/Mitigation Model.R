@@ -99,7 +99,7 @@ plot_observed_vs_predicted <- function(testing_data, y_pred) {
 }
 
 # Main script
-file_path <- "path/to/your/model_data.csv"  # Update with your generalized file path
+file_path <- "path/to/your/Mitigation Model Data.csv"  
 
 data <- read_and_split_data(file_path)
 model_rf <- train_rf_model(data$training)

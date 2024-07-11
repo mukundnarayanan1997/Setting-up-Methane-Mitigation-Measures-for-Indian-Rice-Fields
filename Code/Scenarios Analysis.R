@@ -104,12 +104,12 @@ plot_scenarios(scenarios_predictions)
 # Save data to Excel
 save_data_to_excel(scenarios_predictions, output_path)
 
-# Forward model
-model_rf_forward <- rfsrc(Multivar(`GWP20*10^8`, `GWP100*10^8`, `GTP20*10^8`, `GTP50*10^8`, `GTP100*10^8`) ~ .,
+# reverse model
+model_rf_reverse <- rfsrc(Multivar(`GWP20*10^8`, `GWP100*10^8`, `GTP20*10^8`, `GTP50*10^8`, `GTP100*10^8`) ~ .,
                           data = data$training, ntree = 1000)
 
-# Function to predict forward model
-predict_forward_model <- function(model, scenario_merged) {
+# Function to predict reverse model
+predict_reverse_model <- function(model, scenario_merged) {
   prediction <- predict(model, scenario_merged[-c(9:13)])
   gwp20_pred <- prediction[["regrOutput"]][["GWP20*10^8"]]$predicted
   gwp100_pred <- prediction[["regrOutput"]][["GWP100*10^8"]]$predicted
@@ -122,8 +122,8 @@ predict_forward_model <- function(model, scenario_merged) {
   return(scenario_merged_pred)
 }
 
-# Predict forward model for each scenario
-scenario_merged_preds <- lapply(scenario_predictions, function(scenario) predict_forward_model(model_rf_forward, scenario))
+# Predict reverse model for each scenario
+scenario_merged_preds <- lapply(scenario_predictions, function(scenario) predict_reverse_model(model_rf_reverse, scenario))
 
 # Compute R-squared
 rsq <- function(y_act, y_pred) {
