@@ -4,3 +4,11 @@ Department of Water Resources Development and Management, Indian Institute of Te
 *Corresponding Author (Email: idhaya@wr.iitr.ac.in) 
 
 This repository contains the code and datasets generated in this study. Please look at the corresponding folders to find the data
+
+
+# Data
+
+## Model Data
+## Synthesized data
+
+# Code
