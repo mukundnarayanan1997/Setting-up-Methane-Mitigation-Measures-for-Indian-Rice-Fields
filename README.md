@@ -44,9 +44,7 @@ This script is designed to compare different models for predicting methane emiss
 
 - Library Imports: Loads necessary R libraries such as tidyverse, caret, readxl, caTools, randomForestSRC, ggthemes, xlsx, and ggridges.
 - Data Reading and Splitting: Similar to the Mitigation Model.R, it defines a function read_and_split_data to read and split the data.
-- Model Training: Defines functions to train multiple models, including Random Forests and potentially other machine learning models.
-- Scenario Data Generation: Defines a function generate_scenario_data to create different scenarios based on reductions in emission factors for a given year.
-- Scenario Predictions: Defines a function predict_scenario to use the trained model to predict outcomes for different scenarios, including reductions in animal manure, rice residue, nitrogen fertilizer, and water input.
+- Model Training: Defines functions to train multiple models, including Random Forests, Support vector machines and Gradient boosted trees
 - Performance Evaluation: Evaluates the performance of different models by comparing their predictions against actual data, calculating metrics like R-squared, and visualizing results.
 
 ### 3. Scenarios Analysis.R
